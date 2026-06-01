@@ -22,10 +22,10 @@ async function mostrarPokemon(nombre){
         console.error(error.message);
     }
     
-);
+}
     boton.addEventListener("click", async()=>{
     //esto llama al PonerPokemon, obtiene lo que tiene la caja de texto, y el lower lo convierte todo en minuscula
     const nombrePokemon=document.getElementById("PonerPokemon").value.toLowerCase();
     mostrarPokemon()
 }
-}
+});
