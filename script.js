@@ -7,8 +7,9 @@ boton.addEventListener("click", async()=>{
     const nombrePokemon=document.getElementById("PonerPokemon").value.toLowerCase();
 
     const respuesta=await fetch(`https://corsproxy.io/?https://pokeapi.co/api/v2/pokemon/${nombrePokemon}`);
+    console.log(respuesta);
     const data = await respuesta.json();
-
+    console.log(data);
     pokemonDiv.innerHTML=` <h2>${data.name}</h2>
     <img src="${data.sprites.front_default}">
     `
