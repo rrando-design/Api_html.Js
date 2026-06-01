@@ -12,7 +12,7 @@ boton.addEventListener("click", async()=>{
         
     const respuesta=await fetch(`https://corsproxy.io/?https://pokeapi.co/api/v2/pokemon/${nombrePokemon}`);
      if (!respuesta.ok) {
-     throw new Error("pokemon no encontrado "); } 
+     throw new Error("pokemon no encontrado "); } else
     const data = await respuesta.json();
     console.log(`${dataname}`);
 
