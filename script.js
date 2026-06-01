@@ -16,7 +16,7 @@ async function mostrarPokemon(nombre){
     pokemonDiv.innerHTML=
         `<h2>${data.name}</h2>
     <img src="${data.sprites.front_default}">
-    `
+    `;
    
      } catch(error){ 
         console.error(error.message);
