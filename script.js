@@ -9,7 +9,7 @@ boton.addEventListener("click", async()=>{
     try{
         
     const respuesta=await fetch(`https://corsproxy.io/?https://pokeapi.co/api/v2/pokemon/${nombrePokemon}`);
-     if (!respuesta.ok) {
+     if (respuesta.ok) {
      throw new Error("Usuario no encontrado 👤");
        
     console.log(respuesta);
@@ -21,7 +21,7 @@ boton.addEventListener("click", async()=>{
     } catch(error){ 
         mostrarMensaje(error.message);
     }
-    
+}
     MostrarPokemon()
-          }
+          
 });
