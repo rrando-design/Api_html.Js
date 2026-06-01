@@ -1,10 +1,10 @@
-const boton= document.getElementById("buscar");
-const pokemonDiv= document.getElementById("pokemon");
+const boton = document.getElementById("buscar");
+const pokemonDiv = document.getElementById("pokemon");
 
- async function mostrarPokemon(nombre) {
+async function mostrarPokemon(nombre) {
     try {
         const respuesta = await fetch(
-            `https://corsproxy.io/?https://pokeapi.co/api/v2/pokemon/${nombre}`
+            `https://pokeapi.co/api/v2/pokemon/${nombre}`
         );
 
         if (!respuesta.ok) {
@@ -12,15 +12,13 @@ const pokemonDiv= document.getElementById("pokemon");
         }
 
         const data = await respuesta.json();
-        console.log(nombrePokemon);
-        console.log(data);
 
         pokemonDiv.innerHTML = `
             <h2>${data.name}</h2>
             <img src="${data.sprites.front_default}">
         `;
     } catch (error) {
-        console.error(error.message);
+        console.error(error);
     }
 }
 
@@ -30,5 +28,5 @@ boton.addEventListener("click", () => {
         .value
         .toLowerCase();
 
-      mostrarPokemon(nombrePokemon);
+    mostrarPokemon(nombrePokemon);
 });
