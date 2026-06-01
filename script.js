@@ -12,6 +12,7 @@ const pokemonDiv= document.getElementById("pokemon");
         }
 
         const data = await respuesta.json();
+        console.log(nombrePokemon);
         console.log(data);
 
         pokemonDiv.innerHTML = `
@@ -29,5 +30,5 @@ boton.addEventListener("click", () => {
         .value
         .toLowerCase();
 
-    mostrarPokemon(nombrePokemon);
+      mostrarPokemon(nombrePokemon);
 });
