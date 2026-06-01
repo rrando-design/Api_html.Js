@@ -14,8 +14,8 @@ boton.addEventListener("click", async()=>{
     pokemonDiv.innerHTML=` <h2>${data.name}</h2>
     <img src="${data.sprites.front_default}">
     `
-    } catch(error){
-        console.error("Error:", error)
+    } catch(error){ 
+        mostrarMensaje(error.message);
     }
     
     MostrarPokemon()
