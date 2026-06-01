@@ -9,7 +9,6 @@ boton.addEventListener("click", async()=>{
     try{
         
     const respuesta=await fetch(`https://corsproxy.io/?https://pokeapi.co/api/v2/pokemon/${nombrePokemon}`);
-     if (!respuesta.ok) {
        
     console.log(respuesta);
     const data = await respuesta.json();
