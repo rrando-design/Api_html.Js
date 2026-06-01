@@ -1,7 +1,16 @@
 const boton = document.getElementById("buscar");
 const pokemonDiv = document.getElementById("pokemon");
 
-async function mostrarPokemon(nombre) {
+
+boton.addEventListener("click", () => {
+    const nombrePokemon = document
+        .getElementById("PonerPokemon")
+        .value
+        .toLowerCase();
+
+    mostrarPokemon(nombrePokemon);
+});
+async function mostrarPokemon(nombrePokemon) {
     try {
         const respuesta = await fetch(
             `https://pokeapi.co/api/v2/pokemon/${nombre}`
@@ -22,11 +31,3 @@ async function mostrarPokemon(nombre) {
     }
 }
 
-boton.addEventListener("click", () => {
-    const nombrePokemon = document
-        .getElementById("PonerPokemon")
-        .value
-        .toLowerCase();
-
-    mostrarPokemon(nombrePokemon);
-});
