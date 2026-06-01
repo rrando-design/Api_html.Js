@@ -14,7 +14,8 @@ boton.addEventListener("click", async()=>{
      if (!respuesta.ok) {
      throw new Error("pokemon no encontrado "); } else
     const data = await respuesta.json();
-    console.log(`${dataname}`);
+    console.log(name);
+    console.log(data);
 
     pokemonDiv.innerHTML=` <h2>${data.name}</h2>
     <img src="${data.sprites.front_default}">
